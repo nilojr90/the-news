@@ -1,3 +1,13 @@
+# The News 
+
+Acessivel em: https://the-news-eta.vercel.app/
+
+
+# Configuração Inicial
+
+Este projeto foi criado seguindo o guia disponivel em [Configurando um projeto ReactJS](https://dev.to/aryclenio/configurando-um-projeto-reactjs-typescript-com-editorconfig-eslint-e-prettier-leo) e adcionado o suporte a Sass [Use SASS in React js](https://medium.com/how-to-react/use-sass-in-react-js-bbeb0b94f8a6)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -45,6 +55,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-# Configuração Inicial
 
-Este projeto foi criado seguindo o guia disponivel em [Configurando um projeto ReactJS](https://dev.to/aryclenio/configurando-um-projeto-reactjs-typescript-com-editorconfig-eslint-e-prettier-leo) e adcionado o suporte a Sass [Use SASS in React js](https://medium.com/how-to-react/use-sass-in-react-js-bbeb0b94f8a6)

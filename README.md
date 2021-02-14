@@ -2,6 +2,9 @@
 
 Acessivel em: https://the-news-eta.vercel.app/
 
+# Backend
+
+Deve consumir a API [Times Newswire API](https://developer.nytimes.com/docs/timeswire-product)
 
 # Configuração Inicial
 

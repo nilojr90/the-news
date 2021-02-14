@@ -24,8 +24,8 @@ const Home: React.FC = () => {
     <div>
       <h1>home</h1>
       <ul>
-        {news.map((item, index) => (
-          <li key={index}>{item}</li>
+        {news.map((item) => (
+          <li key={item}>{item}</li>
         ))}
       </ul>
     </div>

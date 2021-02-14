@@ -6,11 +6,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getNewsBySesion('home')
-        .then((r) => r)
-        .catch((error) => {
-          throw new Error('Falha ao carregar notícias.');
-        });
+      const response = await getNewsBySesion('home').then((r) => r);
 
       if (response) {
         setNews(response.data.results);

@@ -8,11 +8,11 @@ const Home: React.FC = () => {
     const fetchData = async () => {
       const response = await getNewsBySesion('home')
         .then((r) => r)
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          throw new Error('Falha ao carregar notícias.');
+        });
 
-      console.log(response);
       if (response) {
-        console.log(response.data.results);
         setNews(response.data.results);
       }
     };

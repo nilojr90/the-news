@@ -2,23 +2,18 @@ export default interface TopStoriesApiResponse {
   status: string;
   copyright: string;
   section: string;
-  "last_updated": Date;
-  "num_results": number;
+  last_updated: any;
+  num_results: number;
   results: Article[];
 }
 
 export interface Article {
-  type: string;
-  properties: ArticleProperties;
-}
-
-export interface ArticleProperties {
   section: Abstract;
   subsection: Abstract;
   title: Abstract;
   abstract: Abstract;
   url: Abstract;
-  short_url: Abstract;
+  short_url: string;
   byline: Abstract;
   thumbnail_standard: Abstract;
   item_type: Abstract;
@@ -43,7 +38,6 @@ export interface Abstract {
 }
 
 export enum Type {
-  Integer = 'integer',
   String = 'string',
 }
 

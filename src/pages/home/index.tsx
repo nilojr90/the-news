@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import getNewsBySesion from 'services/top-stories';
+import TopStoriesApiResponse, { Article } from 'models/top-stories.model';
 
 const Home: React.FC = () => {
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState<Article[] | undefined>(undefined);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getNewsBySesion('home').then((r) => r);
+      const response = await getNewsBySesion('')
+        .then((sucess) => sucess)
+        .catch((error) => null);
 
-      if (response) {
-        setNews(response.data.results);
+      if (response !== null) {
+        setCount(response.data.num_results);
+        const array: Article[] = response.data.results;
+        setNews(array);
       }
     };
 
@@ -18,11 +24,16 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>home</h1>
+      <h1> home </h1>
       <ul>
-        {news.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
+        {news?.map((item) => {
+          return (
+            <li key={item.short_url}>
+              <h2>{item.title}</h2>
+              <p>{item.abstract}</p>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

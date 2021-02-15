@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from 'react';
-import { Article, Multimedia } from 'models/top-stories.model';
+import React from 'react';
+import { Article } from 'models/top-stories.model';
 
 interface INewsCardProps {
   article: Article;

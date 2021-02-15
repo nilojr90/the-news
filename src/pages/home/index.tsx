@@ -5,7 +5,6 @@ import NewsCard from 'components/news-card';
 
 const Home: React.FC = () => {
   const [news, setNews] = useState<Article[] | undefined>(undefined);
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +13,6 @@ const Home: React.FC = () => {
         .catch((error) => error);
 
       if (response !== null) {
-        setCount(response.data.num_results);
         const array: Article[] = response.data.results;
         setNews(array);
       }

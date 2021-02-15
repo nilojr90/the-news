@@ -30,7 +30,7 @@ export interface Article {
   geo_facet: Facet;
   blog_name: Abstract;
   related_urls: RelatedUrls;
-  multimedia: Multimedia;
+  multimedia: [Multimedia];
 }
 
 export interface Abstract {
@@ -47,24 +47,14 @@ export interface Facet {
 }
 
 export interface Multimedia {
+  url: string;
+  format: string;
+  height: number;
+  width: number;
   type: string;
-  items: MultimediaItems;
-}
-
-export interface MultimediaItems {
-  type: string;
-  properties: PurpleProperties;
-}
-
-export interface PurpleProperties {
-  url: Abstract;
-  format: Abstract;
-  height: Abstract;
-  width: Abstract;
-  type: Abstract;
-  subtype: Abstract;
-  caption: Abstract;
-  copyright: Abstract;
+  subtype: string;
+  caption: string;
+  copyright: string;
 }
 
 export interface RelatedUrls {

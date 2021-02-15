@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import getNewsBySesion from 'services/top-stories';
 import { Article } from 'models/top-stories.model';
+import NewsCard from 'components/news-card';
 
 const Home: React.FC = () => {
   const [news, setNews] = useState<Article[] | undefined>(undefined);
@@ -24,16 +25,9 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1> home - {count}</h1>
       <ul>
-        {news?.map((item) => {
-          return (
-            <li key={item.short_url}>
-              <h2>{item.title}</h2>
-              <p>{item.abstract}</p>
-              <a href={item.short_url}>Ver mais...</a>
-            </li>
-          );
+        {news?.map((item: Article) => {
+          return <NewsCard article={item} />;
         })}
       </ul>
     </div>

@@ -20,7 +20,9 @@ function App(): ReactElement {
         <img className="logo" src={logo} alt="" />
         <img className="ny-times-small" src={nyTimesSmall} alt="" />
       </div>
-      <Home />
+      <div className="main">
+        <Home />
+      </div>
       <a href="https://developer.nytimes.com">
         <img alt="" src={nyTimes} />
       </a>

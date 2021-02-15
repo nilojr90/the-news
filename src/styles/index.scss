@@ -20,6 +20,22 @@ h4,
 h5,
 h6 {
   text-transform: capitalize;
+  text-align: left;
+}
+
+h5,
+h6 {
+  color: $secondary-text-color;
+}
+
+p {
+  text-align: left;
+}
+
+figcaption {
+  color: $secondary-text-color;
+  font-size: small;
+  text-align: center;
 }
 
 li {
@@ -67,9 +83,7 @@ div.hamburger > nav {
   padding: 0px;
   opacity: 0%;
   cursor: pointer;
-}
 
-#checkbox-nav {
   & ~ i {
     position: absolute;
     top: 0px;
@@ -91,5 +105,33 @@ div.hamburger > nav {
 
   & ~ i {
     background-image: url('..\\..\\src\\assets\\icons\\close.svg');
+  }
+}
+
+.news-card {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.5);
+
+  & * {
+    margin: 0 1rem;
+  }
+
+  & figure,
+  & figure > img {
+    width: 100%;
+    margin-left: 0rem;
+    margin-top: 0;
+  }
+
+  & figure {
+    padding: 0.5rem 0;
+  }
+
+  & p ~ a {
+    display: block;
+    text-align: right;
   }
 }

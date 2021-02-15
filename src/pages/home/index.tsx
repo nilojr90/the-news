@@ -31,6 +31,7 @@ const Home: React.FC = () => {
             <li key={item.short_url}>
               <h2>{item.title}</h2>
               <p>{item.abstract}</p>
+              <a href={item.short_url}>Ver mais...</a>
             </li>
           );
         })}

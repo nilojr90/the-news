@@ -8,13 +8,17 @@ interface INewsCardProps {
 const MultiImage: React.FC<INewsCardProps> = ({ source }: INewsCardProps) => {
   const srcSet = source
     .map((item) => {
-      return `${item.url} ${item.width} w`;
+      return `${item.url} ${item.width}w`;
     })
-    .join(',\r\n');
+    .join(', ');
 
   return (
     <figure>
-      <img srcSet={srcSet} src={source[0].url} alt="" />
+      <img
+        src={source.filter((item) => item.format === 'Normal')[0].url}
+        srcSet={srcSet}
+        alt=""
+      />
       <figcaption>{source[0].caption}</figcaption>
     </figure>
   );

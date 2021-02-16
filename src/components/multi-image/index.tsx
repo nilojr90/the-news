@@ -7,6 +7,7 @@ interface INewsCardProps {
 
 const MultiImage: React.FC<INewsCardProps> = ({ source }: INewsCardProps) => {
   const srcSet = source
+    .filter((item) => item.format !== 'superJumbo')
     .map((item) => {
       return `${item.url} ${item.width}w`;
     })

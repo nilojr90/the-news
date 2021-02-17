@@ -5,6 +5,7 @@ import NewsCard from 'components/news-card';
 
 const Home: React.FC = () => {
   const [news, setNews] = useState<Article[] | undefined>(undefined);
+  const [limit, setLimit] = useState(3);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,10 +25,20 @@ const Home: React.FC = () => {
   return (
     <div>
       <ul>
-        {news?.map((item: Article) => {
-          return <NewsCard article={item} />;
-        })}
+        {news
+          ?.filter((item, index) => index < limit)
+          .map((item: Article) => {
+            return <NewsCard key={item.short_url} article={item} />;
+          })}
       </ul>
+      <button
+        type="button"
+        onClick={() => {
+          setLimit(limit + 3);
+        }}
+      >
+        Mais...
+      </button>
     </div>
   );
 };
